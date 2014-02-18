@@ -8,7 +8,7 @@ An example application to test new localization feature of [activeadmin-settings
 
 ### Configuration
 
-After clone you should find a basic rails 4 application. To different configuration options, you can edit `config/application.rb` file.
+After clone you should find a basic rails 4 application. To try different configuration options, you can edit `config/application.rb` file.
 
 By changing `available_locales` you can add/remove locales available for settings.
 
