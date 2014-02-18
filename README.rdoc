@@ -1,28 +1,33 @@
-== README
+# activeadmin-settings-examples
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An example application to test new localization feature of [activeadmin-settings](https://github.com/maximgladkov/activeadmin-settings) gem.
 
-Things you may want to cover:
+### Installation
 
-* Ruby version
+    git clone git@github.com:maximgladkov/activeadmin-settings-example.git
 
-* System dependencies
+### Configuration
 
-* Configuration
+After clone you should find a basic rails 4 application. To different configuration options, you can edit `config/application.rb` file.
 
-* Database creation
+By changing `available_locales` you can add/remove locales available for settings.
 
-* Database initialization
+    config.i18n.default_locale = :en
+    config.i18n.available_locales = [:en, :ru]
+    
+To test settings go to `config/activeadmin_settings.yml`. Default values can now be set up for each locale independetly, e.g.:
 
-* How to run the test suite
+    SEO:
+        Website Keywords:
+             description:    These keywords are included in homepage header meta tag
+             default_value:  
+                 en: sample english text
+                 ru: sample russian text
+                 de: sample german text
 
-* Services (job queues, cache servers, search engines, etc.)
+Localized settings could be integrated into templates, modules, controllers as usual. If no locale or nil is passed as a 2nd parameter, default locale is used. For example:
 
-* Deployment instructions
+     <%= settings_value("CEO Message") %> #=> provides html in default locale
+     <%= settings_value("CEO Message", :de) %> #=> provides html in german
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+If setting value is `null` or an empty string default setting value is used which is defined in `config/activeadmin_settings.yml`. The language of the default value is determined by locale passed. If locale was not passed, default is used.
