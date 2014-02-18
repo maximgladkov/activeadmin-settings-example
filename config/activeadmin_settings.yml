@@ -1,0 +1,55 @@
+# ================================================================================
+#   activeadmin_settings.yml
+#   ---configuration file v1.0---
+# ================================================================================
+#
+# This file is used to store a list of activeadmin settings. Settings are split
+# into groups like this:
+# 
+# Here is a setting template:
+#   General Group:
+#     Setting Title:
+#       type:            string (default) / text / file / link
+#       description:     setting one sentence description
+#       default_value:   default value is used when setting value is blank
+#
+# Type details: 
+#   Link setting value expected to be in a format of: (link title) http://link.url
+#
+# ================================================================================
+
+Тестовая группа 1:
+  Тестовое поле 1:
+    type: string
+    description: Описание тестового поля 1
+    default_value: 
+      en: Test value 1
+      ru: Тестовое значение 1
+  Тестовое поле 2:
+    type: text
+    description: Описание тестового поля 2
+    default_value: Тестовое значение 2
+  Тестовое поле 3:
+    type: link
+    description: Описание тестового поля 3
+    default_value: http://test3.example.com
+  Тестовое поле 4:
+    type: file
+    description: Описание тестового поля 4
+
+Test Group 2:
+  Test Field 1:
+    type: string
+    description: Description of test field 1
+    default_value: Test value 1
+  Test Field 2:
+    type: text
+    description: Description of test field 2
+    default_value: Test value 2
+  Test Field 3:
+    type: link
+    description: Description of test field 3
+    default_value: Test value 3
+  Test Field 4:
+    type: file
+    description: Description of test field 4
